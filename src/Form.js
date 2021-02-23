@@ -21,7 +21,9 @@ function Form ({addPerson}) {
   return (
     <div>
       <form onSubmit={onSubmit}>
-        <input type='text' name='name' value={person.name} onChange={updatePerson} />
+        <p>Name: <input type='text' name='name' value={person.name} onChange={updatePerson} /></p>
+        <p>Email: <input type='text' name='email' value={person.email} onChange={updatePerson} /></p>
+        <p>Role: <input type='text' name='role' value={person.role} onChange={updatePerson} /></p>
         <input type='submit' value='Add Person' />
       </form>
     </div>

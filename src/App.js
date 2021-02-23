@@ -26,10 +26,10 @@ function App() {
 
   
   
-  useEffect(() => {
-    const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
-    setTeam([testUser, testUser]);
-  }, []);
+  // useEffect(() => {
+  //   const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
+  //   setTeam([testUser, testUser]);
+  // }, []);
 
   const addPerson = (person) => setTeam([...team, person])
 
