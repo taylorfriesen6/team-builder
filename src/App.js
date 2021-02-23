@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="App">
-      {team.map(person => <Person person={person}/>)}
+      {team.map((person,id) => <Person key={id} person={person}/>)}
     </div>
   );
 }
