@@ -1,23 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React, { useState, useEffect } from 'react';
+
+import Person from './Person.js';
+
+// function App() {
+//   const [team, setTeam] = useState([]);
+
+//   const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
+//   setTeam([...team, testUser]);
+
+//   return (
+//     <div className="App">
+//       <div className = "team">
+//         {team.map(person => person.name)}
+//       </div>
+//     </div>
+//   );
+// }
+  
+
 function App() {
+  const [team, setTeam] = useState([]);
+
+  const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
+  
+  useEffect(() => {
+    setTeam([testUser, testUser]);
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {team.map(person => <Person person={person}/>)}
     </div>
   );
 }
