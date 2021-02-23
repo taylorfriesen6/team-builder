@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 import React, { useState, useEffect } from 'react';
 
 import Person from './Person.js';
+import Form from './Form.js';
 
 // function App() {
 //   const [team, setTeam] = useState([]);
@@ -24,15 +24,21 @@ import Person from './Person.js';
 function App() {
   const [team, setTeam] = useState([]);
 
-  const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
+  
   
   useEffect(() => {
+    const testUser = {name: 'Taylor', email: 'taylorfriesen@protonmail.com', role: 'student'};
     setTeam([testUser, testUser]);
   }, []);
 
+  const addPerson = (person) => setTeam([...team, person])
+
   return (
     <div className="App">
-      {team.map((person,id) => <Person key={id} person={person}/>)}
+      <Form addPerson={addPerson}/>
+      <div className="team">
+        {team.map((person,id) => <Person key={id} person={person}/>)}
+      </div>
     </div>
   );
 }
